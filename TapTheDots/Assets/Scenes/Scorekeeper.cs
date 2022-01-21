@@ -23,5 +23,9 @@ public class Scorekeeper : MonoBehaviour
         score += 10;
         scoretext.text = "Score" + score.ToString();
     }
-
+    public void DecreaseScore()
+    {
+        score -= 10;
+        scoretext.text = "Score" + score.ToString();
+    }
 }

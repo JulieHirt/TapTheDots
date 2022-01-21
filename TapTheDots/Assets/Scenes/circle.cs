@@ -21,8 +21,14 @@ public class circle : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("clicked");
-            //if tag is green
-            scorekeeper.IncreaseScore();
+            if (this.tag == "greencircle")
+            {
+                scorekeeper.IncreaseScore();
+            }
+            else if (this.tag == "redcircle")
+            {
+                scorekeeper.DecreaseScore();
+            }
         }
     }
 }
