@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class circle : MonoBehaviour
 {
+    public Scorekeeper scorekeeper;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        scorekeeper = FindObjectOfType<Scorekeeper>();
     }
 
     // Update is called once per frame
@@ -20,6 +21,8 @@ public class circle : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("clicked");
+            //if tag is green
+            scorekeeper.IncreaseScore();
         }
     }
 }
