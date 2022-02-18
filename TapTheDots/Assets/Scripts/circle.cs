@@ -20,7 +20,7 @@ public class circle : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("clicked");
+            //Debug.Log("clicked");
             if (this.tag == "greencircle")
             {
                 scorekeeper.IncreaseScore();
