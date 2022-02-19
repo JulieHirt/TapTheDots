@@ -12,17 +12,14 @@ public class InputManager : MonoBehaviour
    //uses raycasting
     private void DetectObject()
     {
-        //ScreenPointToRay shoots a ray from the camera to the position specified
+        //shoots a ray from the camera to the position specified
         Ray ray = mainCamera.ScreenPointToRay(touchcontrols.Touch.TouchPosition.ReadValue<Vector2>());
-        //this will only return the first thing it hits. You can also detect multiple things with RaycastAll
-        RaycastHit hit;
-        if(Physics.Raycast(ray, out hit))
-        {
-            if(hit.collider != null)
+        RaycastHit2D hits2D = Physics2D.GetRayIntersection(ray);
+            if(hits2D.collider != null)
             {
-                Debug.Log("hit" + hit.collider.tag);
+                Debug.Log("hit" + hits2D.collider.tag);
             }
-        }
+        
  
     }
     private TouchControls touchcontrols; //TouchControls is the name of the auto-generated C# file
