@@ -4,6 +4,7 @@ using UnityEngine.InputSystem; //tell it to use new input system
 
 public class InputManager : MonoBehaviour
 {
+    public Scorekeeper scorekeeper;
     //for raycasting
     private Camera mainCamera;
 
@@ -17,7 +18,16 @@ public class InputManager : MonoBehaviour
         RaycastHit2D hits2D = Physics2D.GetRayIntersection(ray);
             if(hits2D.collider != null)
             {
-                Debug.Log("hit" + hits2D.collider.tag);
+                if (hits2D.collider.gameObject.tag == "greencircle")
+                {
+                Debug.Log("green");
+                scorekeeper.IncreaseScore();
+                }
+                else if (hits2D.collider.gameObject.tag == "redcircle")
+                {
+                    scorekeeper.DecreaseScore();
+                    Debug.Log("red");
+            }
             }
         
  
